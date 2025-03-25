@@ -109,13 +109,9 @@ def gameLoop():
         snake_List.append(snake_Head)
         if len(snake_List) > Length_of_snake:
             del snake_List[0]
-
-        # Check if snake bites itself
         for x in snake_List[:-1]:
             if x == snake_Head:
                 game_close = True
-
-        # Draw snake
         for block in snake_List:
             pygame.draw.rect(screen, BLACK, [block[0], block[1], BLOCK_SIZE, BLOCK_SIZE])
 
